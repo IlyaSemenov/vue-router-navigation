@@ -21,9 +21,9 @@ Generate navigation links for Order, Details and Tracking in `pages/orders/[orde
 
 ```vue
 <script setup lang="ts">
-import { useRoutePathNavigation } from "vue-router-navigation"
+import { useRouteNavigation } from "vue-router-navigation"
 
-const { prefix } = useRoutePathNavigation()
+const { prefix } = useRouteNavigation()
 </script>
 
 <template>
@@ -46,9 +46,9 @@ Generate navigation links for Address and Billing in `pages/orders/[order_id]/de
 
 ```vue
 <script setup lang="ts">
-import { useRoutePathNavigation } from "vue-router-navigation"
+import { useRouteNavigation } from "vue-router-navigation"
 
-const { prefix, page } = useRoutePathNavigation()
+const { prefix, page } = useRouteNavigation()
 </script>
 
 <template>
@@ -70,9 +70,9 @@ Sometimes vue-router auto-injected CSS classes are not enough. You can explicitl
 
 ```vue
 <script setup lang="ts">
-import { useRoutePathNavigation } from "vue-router-navigation"
+import { useRouteNavigation } from "vue-router-navigation"
 
-const { prefix, page } = useRoutePathNavigation()
+const { prefix, page } = useRouteNavigation()
 </script>
 
 <template>

@@ -29,11 +29,11 @@ export function useRouteNavigation(): RouteNavigation {
   const route = useRoute()
   const instance = getCurrentInstance()
   if (!instance) {
-    throw new Error("useRoutePathNavigation() must be called during setup().")
+    throw new Error("useRouteNavigation() must be called during setup().")
   }
   const componentRoute = route.matched.find(r => r.components?.default === instance.type)
   if (!componentRoute) {
-    throw new Error("useRoutePathNavigation() must be called from a route component.")
+    throw new Error("useRouteNavigation() must be called from a route component.")
   }
   return createRouteNavigation(route.path, componentRoute.path)
 }
