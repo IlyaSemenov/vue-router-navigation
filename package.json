@@ -1,7 +1,7 @@
 {
   "name": "vue-router-navigation",
   "type": "module",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Navigation helpers for vue-router",
   "author": "Ilya Semenov",
   "license": "MIT",
