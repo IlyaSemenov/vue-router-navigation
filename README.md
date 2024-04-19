@@ -48,7 +48,7 @@ Generate navigation links for Address and Billing in `pages/orders/[order_id]/de
 <script setup lang="ts">
 import { useRouteNavigation } from "vue-router-navigation"
 
-const { prefix, page } = useRouteNavigation()
+const { prefix } = useRouteNavigation()
 </script>
 
 <template>
