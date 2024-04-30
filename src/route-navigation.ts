@@ -43,8 +43,8 @@ export function useRouteNavigation(): RouteNavigation {
  * @param componentPath Parent route definition path, possibly including placeholders, such as `/orders/:id`
  */
 export function createRouteNavigation(routePath: string, componentPath: string): RouteNavigation {
-  const segment = componentPath.split("/").length
   // TODO: micro-optimize
+  const segment = componentPath.replace(/\/$/, "").split("/").length
   const parts = routePath.split("/")
   const prefix = parts.slice(0, segment).join("/")
   const page = parts[segment] || undefined
