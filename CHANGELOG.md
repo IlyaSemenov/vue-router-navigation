@@ -1,5 +1,11 @@
 # vue-router-navigation
 
+## 1.0.2
+
+### Patch Changes
+
+- 078a4a2: Fix incorrect prefix for / route.
+
 ## 1.0.1
 
 ### Patch Changes
