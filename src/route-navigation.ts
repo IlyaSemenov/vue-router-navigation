@@ -1,4 +1,4 @@
-import { getCurrentInstance } from "vue"
+import { getCurrentInstance, reactive, watchEffect } from "vue"
 import { useRoute } from "vue-router"
 
 export interface RouteNavigation {
@@ -29,13 +29,20 @@ export function useRouteNavigation(): RouteNavigation {
   const route = useRoute()
   const instance = getCurrentInstance()
   if (!instance) {
-    throw new Error("useRouteNavigation() must be called during setup().")
+    throw new Error("useRouteNavigation() must be called during component setup()")
   }
-  const componentRoute = route.matched.find(r => r.components?.default === instance.type)
-  if (!componentRoute) {
-    throw new Error("useRouteNavigation() must be called from a route component.")
-  }
-  return createRouteNavigation(route.path, componentRoute.path)
+
+  const reactiveNavigation = reactive({} as unknown as RouteNavigation)
+  watchEffect(() => {
+    const componentRoute = route.matched.find(r => r.components?.default === instance.type)
+    if (!componentRoute) {
+      throw new Error("useRouteNavigation() must be used inside a route component.")
+    }
+    const navigation = createRouteNavigation(route.path, componentRoute.path)
+    Object.assign(reactiveNavigation, navigation)
+  })
+
+  return reactiveNavigation
 }
 
 /**
