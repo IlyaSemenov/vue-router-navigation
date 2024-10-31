@@ -8,11 +8,11 @@ export interface RouteNavigation {
 
 /**
  * @param routePath Actual route path, such as `/orders/123/details/billing`
- * @param componentPath Parent route definition path, possibly including placeholders, such as `/orders/:id`
+ * @param routeRecordPath Parent route definition path, possibly including placeholders, such as `/orders/:id`
  */
-export function createRouteNavigation(routePath: string, componentPath: string): RouteNavigation {
+export function createRouteNavigation(routePath: string, routeRecordPath: string): RouteNavigation {
   // TODO: micro-optimize
-  const segment = componentPath.replace(/\/$/, "").split("/").length
+  const segment = routeRecordPath.replace(/\/$/, "").split("/").length
   const parts = routePath.split("/")
   const prefix = parts.slice(0, segment).join("/")
   const page = parts[segment] || undefined
