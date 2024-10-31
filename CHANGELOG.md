@@ -1,5 +1,15 @@
 # vue-router-navigation
 
+## 1.2.0
+
+### Minor Changes
+
+- c4c4d60: Accept custom route object (for Nuxt).
+
+### Patch Changes
+
+- d4b7a6b: Fix JSDoc.
+
 ## 1.1.0
 
 ### Minor Changes
