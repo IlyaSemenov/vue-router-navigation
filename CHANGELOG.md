@@ -1,5 +1,15 @@
 # vue-router-navigation
 
+## 1.1.0
+
+### Minor Changes
+
+- 09cb60a: Return reactive object and update when route path changes.
+
+### Patch Changes
+
+- 00fb725: Fix return type to indicate that `page` always exists (even if undefined).
+
 ## 1.0.2
 
 ### Patch Changes
