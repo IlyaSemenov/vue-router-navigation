@@ -1,5 +1,11 @@
 # vue-router-navigation
 
+## 1.2.1
+
+### Patch Changes
+
+- f007823: Fix crash when called in a child of a route component.
+
 ## 1.2.0
 
 ### Minor Changes
