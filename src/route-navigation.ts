@@ -10,7 +10,7 @@ export interface RouteNavigation {
 }
 
 /**
- * When called inside a parent route component, return the prefix and section of the route path.
+ * When called inside a parent route component, return the prefix and the immediately nested page of the route path.
  *
  * For example, when:
  *
@@ -22,7 +22,7 @@ export interface RouteNavigation {
  * ```
  * {
  *   prefix: "/orders/123",
- *   section: "details"
+ *   page: "details"
  * }
  * ```
  */
