@@ -2,7 +2,7 @@
   "name": "vue-router-navigation",
   "type": "module",
   "version": "1.0.2",
-  "packageManager": "pnpm@8.15.9",
+  "packageManager": "pnpm@9.12.3",
   "description": "Navigation helpers for vue-router",
   "author": "Ilya Semenov",
   "license": "MIT",
