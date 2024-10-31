@@ -96,3 +96,16 @@ const { prefix, page } = useRouteNavigation()
   <router-view />
 </template>
 ```
+
+## Nuxt
+
+For Nuxt, create `composables/router-navigation.ts`:
+
+```ts
+import { useRoute } from "nuxt/app"
+import { useRouteNavigation as useRouteNavigationBase } from "vue-router-navigation"
+
+export const useRouteNavigation = () => useRouteNavigationBase(useRoute())
+```
+
+TODO: implement this as a Nuxt module.

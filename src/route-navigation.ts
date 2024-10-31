@@ -1,5 +1,5 @@
 import { getCurrentInstance, reactive, watchEffect } from "vue"
-import { useRoute } from "vue-router"
+import { type RouteLocationNormalizedLoaded, useRoute } from "vue-router"
 
 import type { RouteNavigation } from "./parse"
 import { createRouteNavigation } from "./parse"
@@ -21,12 +21,15 @@ import { createRouteNavigation } from "./parse"
  * }
  * ```
  */
-export function useRouteNavigation(): RouteNavigation {
-  const route = useRoute()
+export function useRouteNavigation(routeOverride?: RouteLocationNormalizedLoaded): RouteNavigation {
   const instance = getCurrentInstance()
   if (!instance) {
     throw new Error("useRouteNavigation() must be called during component setup()")
   }
+
+  // Hotfix for Nuxt compatibility.
+  // TODO: add dedicted Nuxt module.
+  const route = routeOverride ?? useRoute()
 
   const reactiveNavigation = reactive({} as unknown as RouteNavigation)
   watchEffect(() => {
