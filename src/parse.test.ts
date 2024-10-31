@@ -1,6 +1,6 @@
 import { expect, test } from "vitest"
 
-import { createRouteNavigation } from "./route-navigation"
+import { createRouteNavigation } from "./parse"
 
 test("createRouteNavigation", () => {
   expect(createRouteNavigation("/orders/123", "/orders/:id")).toEqual({ prefix: "/orders/123", page: undefined })
