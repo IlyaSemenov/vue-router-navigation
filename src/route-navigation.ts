@@ -5,7 +5,8 @@ export interface RouteNavigation {
   /** @example "/orders/123" */
   prefix: string
   /** @example "settings" */
-  page?: string
+  // Key always defined, so that toRefs() can be used.
+  page: string | undefined
 }
 
 /**
