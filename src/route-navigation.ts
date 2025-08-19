@@ -30,7 +30,7 @@ export function useRouteNavigation(routeOverride?: RouteLocationNormalizedLoaded
   }
 
   // Hotfix for Nuxt compatibility.
-  // TODO: add dedicted Nuxt module.
+  // TODO: add dedicated Nuxt module.
   const route = routeOverride ?? useRoute()
 
   const reactiveNavigation = reactive({} as unknown as RouteNavigation)
